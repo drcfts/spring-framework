@@ -44,7 +44,7 @@ public class OpNE extends Operator {
 		Object rightValue = getRightOperand().getValueInternal(state).getValue();
 		this.leftActualDescriptor = CodeFlow.toDescriptorFromObject(leftValue);
 		this.rightActualDescriptor = CodeFlow.toDescriptorFromObject(rightValue);
-		return BooleanTypedValue.forValue(!equalityCheck(state.getEvaluationContext(), leftValue, rightValue));
+		return BooleanTypedValue.forValue(!OpGT.equalityCheck(state.getEvaluationContext(), leftValue, rightValue));
 	}
 
 	// This check is different to the one in the other numeric operators (OpLt/etc)

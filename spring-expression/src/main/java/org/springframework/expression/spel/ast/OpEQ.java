@@ -43,7 +43,7 @@ public class OpEQ extends Operator {
 		Object right = getRightOperand().getValueInternal(state).getValue();
 		this.leftActualDescriptor = CodeFlow.toDescriptorFromObject(left);
 		this.rightActualDescriptor = CodeFlow.toDescriptorFromObject(right);
-		return BooleanTypedValue.forValue(equalityCheck(state.getEvaluationContext(), left, right));
+		return BooleanTypedValue.forValue(OpGT.equalityCheck(state.getEvaluationContext(), left, right));
 	}
 
 	// This check is different to the one in the other numeric operators (OpLt/etc)
